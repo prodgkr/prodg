@@ -977,7 +977,7 @@ class NewsTranslator:
             result = subprocess.run(["git", "diff", "--cached", "--quiet"], capture_output=True)
             if result.returncode != 0:
                 subprocess.run(["git", "commit", "-m",
-                    f"chore: update posted_articles [{datetime.now().strftime('%Y-%m-%d %H:%M')}]", check=True)
+                    f"chore: update posted_articles [{datetime.now().strftime('%Y-%m-%d %H:%M')}]"], check=True)
                 # #8: 푸시 전 rebase — 런 도중 main에 들어온 커밋이 있으면 거절되지 않게.
                 try:
                     subprocess.run(["git", "pull", "--rebase"], check=True)
