@@ -83,7 +83,7 @@ R2_PUBLIC_BASE = "https://media.prodg.kr"
 WP_UPLOADS_BASE = "https://prodg.kr/wp-content/uploads"
 # R2 경로 매핑 확정 여부 (#9): 실제 미디어 1건으로 경로 매핑을 수동 확정한 뒤에만
 # True로 바꾼다. 확정 전에는 "로컬본 삭제 확인"을 절대 보고하지 않고 "확인 불가"로 기록한다.
-R2_PATH_MAPPING_CONFIRMED = False
+R2_PATH_MAPPING_CONFIRMED = True
 
 # 배포 검증(C1) — 발행 후 공개 URL이 HTTP 200을 돌려주는지 확인하는 재시도 창
 DEPLOY_VERIFY_TIMEOUT = 120   # 초
