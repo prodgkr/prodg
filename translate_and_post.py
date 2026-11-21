@@ -985,7 +985,7 @@ class NewsTranslator:
                     log(f"❌ git pull --rebase 실패: {e}")
                     return False
                 subprocess.run(["git", "push"], check=True)
-                log("📝 posted_articles.json → git 커밋 완료")
+                log("📝 상태 파일 커밋 완료")
             else:
                 log("📝 커밋할 변경 없음")
             return True
