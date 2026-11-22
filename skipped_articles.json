@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "url": "https://jp.pronews.com/news/202611141231800013.html",
+    "reason": "번역본 354자",
+    "date": "2026-11-22",
+    "hits": 1
+  },
+  {
+    "url": "https://jp.pronews.com/news/202611131453798824.html",
+    "reason": "번역본 486자",
+    "date": "2026-11-22",
+    "hits": 1
+  },
+  {
+    "url": "https://jp.pronews.com/news/202611131314799617.html",
+    "reason": "번역본 499자",
+    "date": "2026-11-22",
+    "hits": 1
+  },
+  {
+    "url": "https://jp.pronews.com/news/202611070718797926.html",
+    "reason": "원문 216자",
+    "date": "2026-11-22",
+    "hits": 1
+  }
+]
