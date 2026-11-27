@@ -79,6 +79,8 @@ class TestTranslationFidelityRules(unittest.TestCase):
             "日本市場→일본 시장",
             "한국으로 바꾸",
             "현지화하지 말 것",
+            '国産→"일본산"',
+            "東京→도쿄",
         ):
             self.assertIn(required, prompt, f"missing from prompt: {required}")
 
@@ -108,7 +110,7 @@ class TestTranslationFidelityRules(unittest.TestCase):
         out = self.engine.retranslate_content("<p>日本語の部分が残っている。</p>")
         self.assertEqual(out, CANNED_JSON)
         prompt = self.captured_prompts[0]
-        for required in ("日本→일본", "日本語→일본어", "日本市場→일본 시장", '国内→"일본 내"', "円→엔"):
+        for required in ("日本→일본", "日本語→일본어", "日本市場→일본 시장", '国内→"일본 내"', "円→엔", '国産→"일본산"', "東京→도쿄"):
             self.assertIn(required, prompt, f"missing from retranslate prompt: {required}")
 
 
