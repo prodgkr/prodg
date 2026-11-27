@@ -81,6 +81,10 @@ class TestTranslationFidelityRules(unittest.TestCase):
             "현지화하지 말 것",
             '国産→"일본산"',
             "東京→도쿄",
+            "\u56fd\u5185\u5916\u2192\"\uc77c\ubcf8 \ub0b4\uc708\"",
+            "\u5168\u56fd/\u5168\u56fd\u5404\u5730\u2192\"\uc77c\ubcf8 \uc804\uc5ed\"",
+            "모든 출력 필드",
+            "title, excerpt, tldr, content",
         ):
             self.assertIn(required, prompt, f"missing from prompt: {required}")
 
@@ -110,7 +114,7 @@ class TestTranslationFidelityRules(unittest.TestCase):
         out = self.engine.retranslate_content("<p>日本語の部分が残っている。</p>")
         self.assertEqual(out, CANNED_JSON)
         prompt = self.captured_prompts[0]
-        for required in ("日本→일본", "日本語→일본어", "日本市場→일본 시장", '国内→"일본 내"', "円→엔", '国産→"일본산"', "東京→도쿄"):
+        for required in ("日本→일본", "日本語→일본어", "日本市場→일본 시장", '\u56fd\u5185\u2192"\uc77c\ubcf8 \ub0b4"', "円→엔", ''\u56fd\u7523\u2192"\uc77c\ubcf8\uc0b0"', "\u6771\u4eac\u2192\ub3c4\ucfc4", "\u56fd\u5185\u5916\u2192\"\uc77c\ubcf8 \ub0b4\uc678\"", "\u5168\u56fd\u2192\"\uc77c\ubcf8 \uc804\uc5ed\"", "모든 출력 필드"):
             self.assertIn(required, prompt, f"missing from retranslate prompt: {required}")
 
 
